@@ -5,6 +5,7 @@ import org.junit.jupiter.api.io.TempDir;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,6 +32,22 @@ class SiteCsvTest {
     @Test void invalidHeaderRefusesFile() throws IOException {
         Path input = csv("name,address,containers\n");
         assertThrows(IllegalArgumentException.class, () -> SiteCsv.read(input));
+    }
+
+    @Test void missingFileReportsIoError() {
+        Path input = directory.resolve("missing.csv");
+        assertThrows(NoSuchFileException.class, () -> SiteCsv.read(input));
+    }
+
+    @Test void rejectsWrongFieldCountAndNonNumericCapacity() throws IOException {
+        var rows = SiteCsv.read(csv(HEADER + "A;Майданчик;Адреса\nB;Майданчик;Адреса;abc"));
+        assertEquals(2, rows.size());
+        assertEquals(2, rows.getFirst().line());
+        assertFalse(rows.getFirst().valid());
+        assertTrue(rows.getFirst().error().contains("4 поля"));
+        assertEquals(3, rows.getLast().line());
+        assertFalse(rows.getLast().valid());
+        assertTrue(rows.getLast().error().contains("Контейнери"));
     }
 
     @Test void missingRequiredFieldRejectsOnlyOneRowAndPreservesLineNumbers() throws IOException {
