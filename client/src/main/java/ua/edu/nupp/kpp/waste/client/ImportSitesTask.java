@@ -23,7 +23,16 @@ public final class ImportSitesTask extends Task<ImportSitesTask.Result> {
     @Override protected Result call() throws IOException {
         LOGGER.info("Почато фоновий імпорт контейнерних майданчиків.");
         updateMessage("Читання CSV…");
-        var rows = SiteCsv.read(csv);
+        List<SiteCsv.Row> rows;
+        try {
+            rows = SiteCsv.read(csv);
+        } catch (IOException e) {
+            LOGGER.warning(() -> "Імпорт не виконано: помилка читання CSV (" + e.getClass().getSimpleName() + ").");
+            throw e;
+        } catch (IllegalArgumentException e) {
+            LOGGER.warning(() -> "Імпорт не виконано: " + e.getMessage());
+            throw e;
+        }
         updateProgress(0, Math.max(rows.size(), 1));
         int accepted = 0;
         int rejected = 0;
@@ -34,7 +43,9 @@ public final class ImportSitesTask extends Task<ImportSitesTask.Result> {
             if (isCancelled()) break;
             if (!row.valid()) {
                 rejected++;
-                errors.add("Рядок " + row.line() + ": " + row.error());
+                String detail = "Рядок " + row.line() + ": " + row.error();
+                errors.add(detail);
+                LOGGER.warning(detail);
             } else {
                 try {
                     api.save("sites", null, row.site());
@@ -42,11 +53,14 @@ public final class ImportSitesTask extends Task<ImportSitesTask.Result> {
                 } catch (ApiClient.ApiException e) {
                     if (e.status() < 400 || e.status() >= 500) {
                         interruptedBy = "Рядок " + row.line() + ": " + e.getMessage();
-                        LOGGER.warning("Імпорт зупинено через недоступність API.");
+                        LOGGER.warning(() -> "Імпорт зупинено на рядку " + row.line()
+                                + " через помилку зв’язку або сервера (код " + e.status() + ").");
                         break;
                     }
                     rejected++;
                     errors.add("Рядок " + row.line() + ": " + e.getMessage());
+                    LOGGER.warning(() -> "Рядок " + row.line() + ": сервер відхилив запис (HTTP "
+                            + e.status() + ").");
                 }
             }
             processed++;
