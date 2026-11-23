@@ -68,3 +68,5 @@ P-EXAMPLE;Центральний майданчик;вул. Соборності
 - `scripts/` — встановлення інструментів, складання, запуск, зупинка та HTTP перевірка.
 
 REST API під коренем `/waste-collection-server/api` надає ресурси `/sites`, `/vehicles`, `/requests`, `/trips`. Колекції підтримують GET і POST. Запис за ID підтримує GET, PUT і DELETE. Перехід стану — PATCH `/requests/{id}/status` з тілом `{"status":"PLANNED"}`. Помилки повертаються як JSON із полем `message`.
+
+Перебіг чистого запуску та результати перевірок наведено у [VERIFICATION.md](VERIFICATION.md). Версію для оцінювання позначено анотованим тегом `coursework-final`.
