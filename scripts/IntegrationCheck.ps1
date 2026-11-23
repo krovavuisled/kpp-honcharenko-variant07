@@ -39,6 +39,8 @@ function Move-Request([long]$id, [string]$status) {
 }
 
 try {
+    $health = Send-Api Get 'health' $null
+    Check ($health.status -eq 'UP' -and $health.database -eq 'UP' -and $health.variant -eq 7) 'Variant 7 server and MySQL available'
     foreach ($resource in 'sites','vehicles','requests','trips') {
         $reply = Send-Api Get $resource $null
         Check ($null -ne $reply) "Seed data for $resource"
@@ -49,7 +51,7 @@ try {
     $siteBody.capacityContainers = 6
     $site = Send-Api Put "sites/$($site.id)" $siteBody
     Check ((Send-Api Get "sites/$($site.id)" $null).capacityContainers -eq 6) 'Update and read a container site'
-    Expect-HttpError Post 'sites' $siteBody @(409,400) 'Reject duplicate site code'
+    Expect-HttpError Post 'sites' $siteBody @(409) 'Reject duplicate site code'
     Expect-HttpError Post 'sites' @{code="BAD-$suffix"; name='Audit fixture'; address='Integration address'; capacityContainers=0} @(400) 'Reject zero site capacity'
     $vehicleBody = @{plate="QA-$suffix"; model='Audit vehicle'; capacityKg=8500; active=$true}
     $vehicle = Send-Api Post 'vehicles' $vehicleBody
@@ -61,9 +63,9 @@ try {
     $request = Send-Api Post 'requests' $requestBody
     Check ($request.status -eq 'CREATED') 'Request starts in CREATED'
     Check ([decimal]$request.priority -eq 65.50) 'Priority 80 / 60 / 36 hours equals 65.50'
-    Expect-HttpError Patch "requests/$($request.id)/status" @{status='IN_PROGRESS'} @(400,409) 'Reject skipped status'
-    Expect-HttpError Patch "requests/$($request.id)/status" @{status='PLANNED'} @(400,409) 'Reject planning without trip'
-    Expect-HttpError Delete "sites/$($site.id)" $null @(409,400) 'Keep site referenced by request'
+    Expect-HttpError Patch "requests/$($request.id)/status" @{status='IN_PROGRESS'} @(409) 'Reject skipped status'
+    Expect-HttpError Patch "requests/$($request.id)/status" @{status='PLANNED'} @(409) 'Reject planning without trip'
+    Expect-HttpError Delete "sites/$($site.id)" $null @(409) 'Keep site referenced by request'
     $requestBody.overdueHours = 100
     $request = Send-Api Put "requests/$($request.id)" $requestBody
     Check ([decimal]$request.priority -eq 78.00) 'Cap overdue score at 100 and recalculate'
@@ -73,13 +75,21 @@ try {
     $tripBody.notes = 'Updated audit trip'
     $trip = Send-Api Put "trips/$($trip.id)" $tripBody
     Check ((Send-Api Get "trips/$($trip.id)" $null).notes -eq 'Updated audit trip') 'Update and read trip'
-    Expect-HttpError Post 'trips' $tripBody @(400,409) 'Reject a second trip for the same request'
-    Expect-HttpError Delete "vehicles/$($vehicle.id)" $null @(400,409) 'Keep vehicle referenced by trip'
+    Expect-HttpError Post 'trips' $tripBody @(409) 'Reject a second trip for the same request'
+    Expect-HttpError Delete "vehicles/$($vehicle.id)" $null @(409) 'Keep vehicle referenced by trip'
+    $vehicleBody.active = $false
+    $vehicle = Send-Api Put "vehicles/$($vehicle.id)" $vehicleBody
+    Expect-HttpError Patch "requests/$($request.id)/status" @{status='PLANNED'} @(409) 'Reject planning with unavailable vehicle'
+    $vehicleBody.active = $true
+    $vehicle = Send-Api Put "vehicles/$($vehicle.id)" $vehicleBody
     foreach ($status in 'PLANNED','IN_PROGRESS','COMPLETED') {
         $request = Move-Request $request.id $status
         Check ($request.status -eq $status) "Transition to $status"
+        if ($status -eq 'PLANNED') {
+            Expect-HttpError Delete "trips/$($trip.id)" $null @(409) 'Keep trip while request is planned'
+        }
     }
-    Expect-HttpError Patch "requests/$($request.id)/status" @{status='CREATED'} @(400,409) 'Reject reverse status'
+    Expect-HttpError Patch "requests/$($request.id)/status" @{status='CREATED'} @(409) 'Reject reverse status'
     $persisted = Send-Api Get "requests/$($request.id)" $null
     Check ($persisted.status -eq 'COMPLETED' -and [decimal]$persisted.priority -eq 78.00) 'Read final state and score from MySQL'
     $null = Send-Api Delete "trips/$($trip.id)" $null
