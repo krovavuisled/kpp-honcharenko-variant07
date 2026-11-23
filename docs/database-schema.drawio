@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" type="device" compressed="false">
+  <diagram id="waste-collection-db" name="Схема бази даних">
+    <mxGraphModel dx="1000" dy="744" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="744" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="heading" value="Схема бази даних" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#18263E;fontSize=26;fontStyle=1;">
+          <mxGeometry x="48" y="32" width="800" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="waste_collection  ·  Інформаційна система керування заявками на вивезення відходів" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#18263E;fontSize=15;fontColor=#526079;">
+          <mxGeometry x="49" y="70" width="900" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site" value="container_site" vertex="1" parent="1" style="swimlane;startSize=38;horizontal=1;html=1;whiteSpace=wrap;arcSize=8;rounded=1;fillColor=#E7EEF9;swimlaneFillColor=#FFFFFF;strokeColor=#9EACBF;strokeWidth=1.5;fontColor=#18263E;fontFamily=Consolas;fontSize=16;fontStyle=1;align=left;spacingLeft=13;collapsible=0;">
+          <mxGeometry x="48" y="112" width="358" height="174" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-id-key" value="PK · AI" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="38" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-id-name" value="id" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="38" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-id-type" value="BIGINT" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="38" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-code-key" value="UQ" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="65" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-code-name" value="code" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="65" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-code-type" value="VARCHAR(24)" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="65" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-name-key" value="" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="92" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-name-name" value="name" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="92" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-name-type" value="VARCHAR(100)" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="92" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-address-key" value="" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="119" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-address-name" value="address" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="119" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-address-type" value="VARCHAR(180)" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="119" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-capacity_containers-key" value="" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="146" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-capacity_containers-name" value="capacity_containers" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="146" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="container_site-capacity_containers-type" value="INT" vertex="1" parent="container_site" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="146" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request" value="pickup_request" vertex="1" parent="1" style="swimlane;startSize=38;horizontal=1;html=1;whiteSpace=wrap;arcSize=8;rounded=1;fillColor=#E7EEF9;swimlaneFillColor=#FFFFFF;strokeColor=#9EACBF;strokeWidth=1.5;fontColor=#18263E;fontFamily=Consolas;fontSize=16;fontStyle=1;align=left;spacingLeft=13;collapsible=0;">
+          <mxGeometry x="550" y="112" width="358" height="255" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-id-key" value="PK · AI" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="38" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-id-name" value="id" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="38" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-id-type" value="BIGINT" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="38" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-site_id-key" value="FK" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="65" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-site_id-name" value="site_id" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="65" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-site_id-type" value="BIGINT" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="65" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-title-key" value="" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="92" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-title-name" value="title" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="92" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-title-type" value="VARCHAR(140)" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="92" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-fill_level-key" value="" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="119" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-fill_level-name" value="fill_level" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="119" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-fill_level-type" value="DECIMAL(5,2)" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="119" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-sanitary_risk-key" value="" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="146" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-sanitary_risk-name" value="sanitary_risk" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="146" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-sanitary_risk-type" value="DECIMAL(5,2)" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="146" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-overdue_hours-key" value="" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="173" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-overdue_hours-name" value="overdue_hours" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="173" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-overdue_hours-type" value="INT" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="173" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-priority-key" value="" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="200" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-priority-name" value="priority" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="200" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-priority-type" value="DECIMAL(5,2)" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="200" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-status-key" value="" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="227" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-status-name" value="status" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="227" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="pickup_request-status-type" value="VARCHAR(16)" vertex="1" parent="pickup_request" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="227" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle" value="vehicle" vertex="1" parent="1" style="swimlane;startSize=38;horizontal=1;html=1;whiteSpace=wrap;arcSize=8;rounded=1;fillColor=#E7EEF9;swimlaneFillColor=#FFFFFF;strokeColor=#9EACBF;strokeWidth=1.5;fontColor=#18263E;fontFamily=Consolas;fontSize=16;fontStyle=1;align=left;spacingLeft=13;collapsible=0;">
+          <mxGeometry x="48" y="414" width="358" height="174" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-id-key" value="PK · AI" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="38" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-id-name" value="id" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="38" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-id-type" value="BIGINT" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="38" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-plate-key" value="UQ" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="65" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-plate-name" value="plate" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="65" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-plate-type" value="VARCHAR(24)" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="65" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-model-key" value="" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="92" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-model-name" value="model" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="92" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-model-type" value="VARCHAR(100)" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="92" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-capacity_kg-key" value="" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="119" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-capacity_kg-name" value="capacity_kg" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="119" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-capacity_kg-type" value="INT" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="119" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-active-key" value="" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="146" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-active-name" value="active" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="146" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="vehicle-active-type" value="BOOLEAN" vertex="1" parent="vehicle" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="146" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip" value="collection_trip" vertex="1" parent="1" style="swimlane;startSize=38;horizontal=1;html=1;whiteSpace=wrap;arcSize=8;rounded=1;fillColor=#E7EEF9;swimlaneFillColor=#FFFFFF;strokeColor=#9EACBF;strokeWidth=1.5;fontColor=#18263E;fontFamily=Consolas;fontSize=16;fontStyle=1;align=left;spacingLeft=13;collapsible=0;">
+          <mxGeometry x="550" y="414" width="358" height="174" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-id-key" value="PK · AI" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="38" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-id-name" value="id" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="38" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-id-type" value="BIGINT" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="38" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-request_id-key" value="FK · UQ" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="65" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-request_id-name" value="request_id" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="65" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-request_id-type" value="BIGINT" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="65" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-vehicle_id-key" value="FK" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="92" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-vehicle_id-name" value="vehicle_id" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="92" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-vehicle_id-type" value="BIGINT" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="92" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-scheduled_date-key" value="" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="119" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-scheduled_date-name" value="scheduled_date" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="119" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-scheduled_date-type" value="DATE" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#F4F7FB;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="119" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-notes-key" value="" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontColor=#21498A;fontSize=12;fontStyle=1;">
+          <mxGeometry x="1" y="146" width="73" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-notes-name" value="notes" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;">
+          <mxGeometry x="74" y="146" width="174" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="collection_trip-notes-type" value="VARCHAR(240)" vertex="1" parent="collection_trip" style="html=1;rounded=0;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#18263E;spacing=0;spacingLeft=10;fontFamily=Consolas;fontSize=13;fontColor=#526079;">
+          <mxGeometry x="248" y="146" width="109" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="fk_request_site" value="1 : 0..N" edge="1" parent="1" source="container_site" target="pickup_request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;strokeColor=#55739A;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#193B71;labelBackgroundColor=#FFFFFF;labelBorderColor=none;exitX=1;exitY=0.5;entryX=0;entryY=0.341176;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="fk_trip_request" value="1 : 0..1" edge="1" parent="1" source="pickup_request" target="collection_trip" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;strokeColor=#55739A;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#193B71;labelBackgroundColor=#FFFFFF;labelBorderColor=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="fk_trip_vehicle" value="1 : 0..N" edge="1" parent="1" source="vehicle" target="collection_trip" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;endArrow=none;strokeColor=#55739A;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#193B71;labelBackgroundColor=#FFFFFF;labelBorderColor=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend" value="PK — первинний ключ     FK — зовнішній ключ     UQ — унікальність     AI — автоінкремент" vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#18263E;fontSize=14;fontStyle=1;">
+          <mxGeometry x="48" y="617" width="860" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="note" value="Зовнішні ключі обов’язкові. Видалення пов’язаних записів заборонено (ON DELETE RESTRICT)." vertex="1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#18263E;fontSize=14;fontColor=#526079;">
+          <mxGeometry x="48" y="645" width="860" height="22" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
